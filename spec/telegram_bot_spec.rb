@@ -15,7 +15,7 @@ describe ItemContainer do
       expect(itm_con.gen_qoutes.class).to eql(Array)
     end
     it 'Generatting random Quotes and should return Array' do
-        expect(itm_con.gen_qoutes.class).not_to eql(Hash)
+      expect(itm_con.gen_qoutes.class).not_to eql(Hash)
     end
   end
 
@@ -31,7 +31,7 @@ describe ItemContainer do
       expect(itm_con.eru_exchange.class).to eql(Hash)
     end
     it 'Generatting Exchange Rates for EUR to other Currencies and should return hash' do
-        expect(itm_con.eru_exchange.class).not_to eql(Array)
-      end
+      expect(itm_con.eru_exchange.class).not_to eql(Array)
+    end
   end
 end
