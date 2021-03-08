@@ -20,6 +20,7 @@ class ItemContainer < User
     else
       @insp_quote
     end
+    @insp_quote
   end
 
   def gen_jokes
@@ -36,5 +37,9 @@ class ItemContainer < User
   def eru_exchange
     uri = URI('https://api.exchangerate.host/latest')
     @exch = JSON.parse(Net::HTTP.get(uri))
+  end
+
+  def sum
+    2 + 2
   end
 end
