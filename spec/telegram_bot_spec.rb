@@ -12,8 +12,14 @@ describe ItemContainer do
   end
   describe '#gen_qoutes' do
     it 'Generatting random Quotes' do
-      usr.user_name('Ted')
       expect(itm_con.gen_qoutes.class).to eql(Array)
     end
   end
+
+  describe '#gen_jokes' do
+  it 'Generatting random Quotes' do
+    usr.user_name('Ted')
+    expect(itm_con.gen_jokes.class).to eql(Hash)
+  end
+end
 end
