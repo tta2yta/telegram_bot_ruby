@@ -6,13 +6,12 @@ class BotTelegram
 
   def bot_main
     item_con = ItemContainer.new
-    usr = User.new
     Telegram::Bot::Client.run(TOKEN) do |bot|
       bot.listen do |message|
         index = rand(0..3)
         index -= 1 if index == 3
         item_con.gen_qoutes
-        qoute=item_con.insp_quote
+        qoute = item_con.insp_quote
         case message.text
         when '/start'
           bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{item_con.insp_quote[index]}")

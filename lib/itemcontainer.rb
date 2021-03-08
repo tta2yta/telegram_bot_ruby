@@ -1,19 +1,28 @@
-class ItemContainer
+require_relative('../lib/user')
+class ItemContainer < User
   attr_reader :insp_quote
   attr_reader :jokes
-
   def initialize
-    @insp_quote=[]
-    @jokes = ['Where do you find a cow with no legs? Right where you left it',
-              "Why aren't koalas actual bears? They don't meet the koalafications.",
-              "What's E.T. short for? Because he's only got little legs."]
+    @insp_quote = []
+    @jokes = []
   end
 
   def gen_qoutes
-    uri = URI('https://zenquotes.io/api/random')
-    @insp_quote=JSON.parse(Net::HTTP.get(uri))
-    if @insp_quote.empty?
-        @insp_quote=[ {"q":"The power of man has grown in every sphere, except over himself.","a":"Winston Churchill",
-        "h":"<blockquote>&ldquo;The power of man has grown in every sphere, except over himself.&rdquo; &mdash; <footer>Winston Churchill</footer></blockquote>"} ]
+    if !@insp_quote.empty?
+      uri = URI('https://zenquotes.io/api/random')
+      @insp_quote = JSON.parse(Net::HTTP.get(uri))
+    else
+      @insp_quote = [{ "q": 'The power of man has grown in every sphere,
+       except over himself.', "a": 'Winston Churchill' }]
+    end
+  end
+
+  def gen_jokes
+    if !@jokes.empty?
+      uri = URI("https://api.chucknorris.io/jokes/random?name=#{@name}")
+      @jokes = JSON.parse(Net::HTTP.get(uri))
+    else
+      @jokes = [{ "value": "#{@name} once repurposed an old baby chair into a four legged Ninja flying death spear." }]
+    end
   end
 end
