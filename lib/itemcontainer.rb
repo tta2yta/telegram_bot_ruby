@@ -3,10 +3,12 @@ class ItemContainer < User
   attr_reader :insp_quote
   attr_reader :jokes
   attr_reader :emoji
+  attr_reader :exch
   def initialize
     @insp_quote = []
     @jokes = []
     @emoji = ['🎂', '🎁', '🕯️', '🎊', '🎉']
+    @exch = []
   end
 
   def gen_qoutes
@@ -29,5 +31,10 @@ class ItemContainer < User
     else
       @jokes
     end
+  end
+
+  def eru_exchange
+    uri = URI('https://api.exchangerate.host/latest')
+    @exch = JSON.parse(Net::HTTP.get(uri))
   end
 end

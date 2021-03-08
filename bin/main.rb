@@ -5,3 +5,7 @@ require_relative('../lib/user')
 bt_telg = BotTelegram.new
 
 bt_telg.bot_main
+
+# res=ItemContainer.new
+# res.eru_exchange
+# p res.exch['rates']['USD']
