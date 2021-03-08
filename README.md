@@ -38,8 +38,6 @@
 
 - '/stop' will prompt with good by message.
 
-- Of course, you can alter the messages and commands in ramsey_bot.rb to something you prefer.
-
 
 ## 🔨 Testing
 
