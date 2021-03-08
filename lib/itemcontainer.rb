@@ -11,4 +11,10 @@ class ItemContainer
               "Why aren't koalas actual bears? They don't meet the koalafications.",
               "What's E.T. short for? Because he's only got little legs."]
   end
+
+  def gen_qoutes
+    uri = URI('https://zenquotes.io/api/random')
+    res=JSON.parse(Net::HTTP.get(uri))
+    res
+  end
 end

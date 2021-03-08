@@ -14,7 +14,7 @@ class BotTelegram
         case message.text
         when '/start'
           bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{item_con.insp_quote[index]}")
-        when message.text
+        when 'quote'
           bot.api.send_message(chat_id: message.chat.id, text: "Joke, #{item_con.jokes[index]}")
         when '/stop'
           bot.api.send_message(chat_id: message.chat.id, text: "Bye, #{message}")

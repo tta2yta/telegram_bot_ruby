@@ -4,7 +4,7 @@ require_relative('../lib/user')
 # usr = User.new
 bt_telg = BotTelegram.new
 
-bt_telg.bot_main
+# bt_telg.bot_main
 
 # rand(1..3)
 # index = rand(0..3)
@@ -22,3 +22,6 @@ bt_telg.bot_main
 #     # end
 #   end
 # end
+uri = URI('https://zenquotes.io/api/random')
+res=JSON.parse(Net::HTTP.get(uri))
+p res[0]['q']
