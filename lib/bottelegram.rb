@@ -30,7 +30,7 @@ You can select some options such as Jokes ('/jokes'), Daily powerfull inspiratio
         when '/stop'
           bot.api.send_message(chat_id: message.chat.id, text: "Bye, #{message}")
         else
-          bot.api.send_message(chat_id: message.chat.id, text: "Sorry, I don't understand '#{message.text}'. I only understand 'start', 'jokes', 'quote' and 'stop'. Try typing 'quote', for example, and see what happens.")
+          bot.api.send_message(chat_id: message.chat.id, text: "Sorry, I don't understand '#{message.text}'. I only understand '/start', '/jokes', '/quote', '/birthday', '/exchange' and '/stop'. Try typing 'quote', for example, and see what happens.")
         end
       end
     end
