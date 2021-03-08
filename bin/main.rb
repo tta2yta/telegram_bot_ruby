@@ -1,11 +1,5 @@
 require_relative('../lib/bottelegram')
 require_relative('../lib/user')
-
-# usr = User.new
+require_relative '../config'
 bt_telg = BotTelegram.new
-
-bt_telg.bot_main
-
-# res=ItemContainer.new
-# res.eru_exchange
-# p res.exch['rates']['USD']
+bt_telg.bot_main(TOKEN)

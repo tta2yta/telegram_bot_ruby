@@ -1,12 +1,11 @@
 require 'telegram/bot'
 require_relative('../lib/itemcontainer')
 class BotTelegram
-  TOKEN = '1680214524:AAG97gL-AMvof0qcy1e217O5WStEvr6lYx8'.freeze
   def initialize; end
 
-  def bot_main
+  def bot_main(token)
     item_con = ItemContainer.new
-    Telegram::Bot::Client.run(TOKEN) do |bot|
+    Telegram::Bot::Client.run(token) do |bot|
       bot.listen do |message|
         case message.text
         when '/start'
