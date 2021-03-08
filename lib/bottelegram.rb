@@ -26,7 +26,7 @@ class BotTelegram
           when '/birthday'
             bot.api.send_message(chat_id: message.chat.id, text: "Your Birthday Emoji \n #{item_con.emoji.sample}")
           when '/exchange'
-            item_con.eru_exchange
+            item_con.exchange
             curr = "USD:#{item_con.exch['rates']['USD']}\nCAD:#{item_con.exch['rates']['CAD']}\nGBP:#{item_con.exch['rates']['GBP']}\nCHF:#{item_con.exch['rates']['CHF']}"
             bot.api.send_message(chat_id: message.chat.id, text: "EUR Exchange to CAD, USD, GBP, CHF \n#{curr}")
           when '/stop'

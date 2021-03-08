@@ -37,6 +37,12 @@ class ItemContainer < User
     end
   end
 
+  def exchange
+    eru_exchange
+  end
+
+  private
+
   def eru_exchange
     uri = URI('https://api.exchangerate.host/latest')
     @exch = JSON.parse(Net::HTTP.get(uri))

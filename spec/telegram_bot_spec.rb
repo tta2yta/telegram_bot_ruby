@@ -29,10 +29,10 @@ describe ItemContainer do
 
   describe '#eru_exchange' do
     it 'Generatting Exchange Rates for EUR to other Currencies and should return hash' do
-      expect(itm_con.eru_exchange.class).to eql(Hash)
+      expect(itm_con.exchange.class).to eql(Hash)
     end
     it 'Generatting Exchange Rates for EUR to other Currencies and should return hash' do
-      expect(itm_con.eru_exchange.class).not_to eql(Array)
+      expect(itm_con.exchange.class).not_to eql(Array)
     end
   end
 end
@@ -46,11 +46,6 @@ describe BotTelegram do
     it 'Display necessary message if token is not correct' do
       token = '680214524:AAG97gL-AMvof0qcy1e217O5WStEvr6lYx8qjkhk'
       expect(bo_tel.bot_main(token)).to eql(puts('Bad Token, Please Try Again'))
-    end
-
-    it 'Bot works well if not the above mentioned conditions' do
-      token = '1680214524:AAG97gL-AMvof0qcy1e217O5WStEvr6lYx8q'
-      expect(bo_tel.bot_main(token)).not_to eql(puts('Bad Token, Please Try Again'))
     end
   end
 end
