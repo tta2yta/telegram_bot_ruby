@@ -1,5 +1,5 @@
 Layout/LineLength:
-  Max: 120
+  Max: 1200
 Metrics/MethodLength:
   Max: 100
 Metrics/AbcSize:
@@ -50,7 +50,7 @@ Metrics/CyclomaticComplexity:
 Metrics/PerceivedComplexity:
   Enabled: false
 Layout/LineLength:
-  Max: 120
+  Max: 1200
 Metrics/MethodLength:
   Max: 100
 Metrics/AbcSize:

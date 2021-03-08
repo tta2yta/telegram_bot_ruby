@@ -2,9 +2,11 @@ require_relative('../lib/user')
 class ItemContainer < User
   attr_reader :insp_quote
   attr_reader :jokes
+  attr_reader :emoji
   def initialize
     @insp_quote = []
     @jokes = []
+    @emoji = ['🎂', '🎁', '🕯️', '🎊', '🎉']
   end
 
   def gen_qoutes
