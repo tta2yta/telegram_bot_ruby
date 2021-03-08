@@ -47,5 +47,10 @@ describe BotTelegram do
       token = '680214524:AAG97gL-AMvof0qcy1e217O5WStEvr6lYx8qjkhk'
       expect(bo_tel.bot_main(token)).to eql(puts('Bad Token, Please Try Again'))
     end
+
+    it 'Bot works well if not the above mentioned conditions' do
+      token = '1680214524:AAG97gL-AMvof0qcy1e217O5WStEvr6lYx8q'
+      expect(bo_tel.bot_main(token)).not_to eql(puts('Bad Token, Please Try Again'))
+    end
   end
 end
