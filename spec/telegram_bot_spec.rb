@@ -1,6 +1,7 @@
 # spec/tic_tac_toe_spce.rb
 require './lib/itemcontainer'
 require './lib/user'
+require './lib/bottelegram'
 
 describe ItemContainer do
   let(:itm_con) { ItemContainer.new }
@@ -32,6 +33,19 @@ describe ItemContainer do
     end
     it 'Generatting Exchange Rates for EUR to other Currencies and should return hash' do
       expect(itm_con.eru_exchange.class).not_to eql(Array)
+    end
+  end
+end
+describe BotTelegram do
+  describe '#bot_main' do
+    let(:bo_tel) { BotTelegram.new }
+    it 'Display necessary message if token is empty' do
+      token = ''
+      expect(bo_tel.bot_main(token)).to eql(puts('Empty Token, Please Try Again'))
+    end
+    it 'Display necessary message if token is not correct' do
+      token = '680214524:AAG97gL-AMvof0qcy1e217O5WStEvr6lYx8qjkhk'
+      expect(bo_tel.bot_main(token)).to eql(puts('Bad Token, Please Try Again'))
     end
   end
 end
