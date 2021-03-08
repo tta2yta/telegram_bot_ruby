@@ -1,4 +1,7 @@
 require_relative('../lib/user')
+require 'json'
+require 'net/http'
+
 class ItemContainer < User
   attr_reader :insp_quote
   attr_reader :jokes
