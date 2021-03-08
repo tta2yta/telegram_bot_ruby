@@ -20,6 +20,8 @@
 
 - Make sure you have Bundler installed in your machine. Once in the project folder (top level director), enter the command `bundle install` in your terminal. This will install the basic dependencies in the Gemfile.
 
+- To install Rspec run command `gem install rspec`. To initiate rspec in your project run command from the root directory `rspec --init`
+
 - Now the rest of the app should run. Go to your terminal, cd into the 'bin' directory of the repo, and enter the command `ruby main.rb`.
 
 - The bot should run. If you search for your bot by its username in Telegram, it should be ready to receive commands. 
@@ -45,7 +47,7 @@ To run the tests described for each method:
 - change directory to the root of the project (cd into the project folder)
 - from terminal run the command `rspec`
 - to run a specific test `rspec ./spec/telegram_bot_spec.rb:10` (here 10 is the line number of the method)
-- result should be similar to:
+
 ## More Information
 
 An explainer video for this project can be found on [Youtube](https://youtu.be/6JMy82_KKNQ)
@@ -69,6 +71,6 @@ Feel free to check the [issues page](issues/).
 
 Give a ⭐️ if you like this project!
 
-## 📝 License
+## License
 
 This project is [MIT](lic.url) licensed.
