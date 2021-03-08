@@ -8,27 +8,18 @@ class BotTelegram
     item_con = ItemContainer.new
     Telegram::Bot::Client.run(TOKEN) do |bot|
       bot.listen do |message|
-        item_con.gen_qoutes
-        qoute = item_con.insp_quote
         case message.text
         when '/start'
           bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{message.from.first_name}")
-        when '/name'
-          bot.api.send_message(chat_id: message.chat.id, text: 'Hello, Please Enter Your Name !')
-          sleep(4)
-          name = message.text
-          loop do
-            break unless name.empty?
-
-            bot.api.send_message(chat_id: message.chat.id, text: 'Hello, Please Enter Your Name !')
-            sleep(4)
-            name = message.text
-          end
-          item_con.user_name(name)
+        when '/jokes'
+          item_con.user_name(message.from.first_name)
           item_con.gen_jokes
           joke = item_con.jokes
-          bot.api.send_message(chat_id: message.chat.id, text: "Today's Qoute for you \n #{joke['value']}")
+          bot.api.send_message(chat_id: message.chat.id, text: "Hopefully the joke may cheer you up: \n
+           #{joke['value']}")
         when '/quote'
+          item_con.gen_qoutes
+          qoute = item_con.insp_quote
           bot.api.send_message(chat_id: message.chat.id, text: "Today's Qoute for you \n #{qoute[0]['q']}")
         when '/stop'
           bot.api.send_message(chat_id: message.chat.id, text: "Bye, #{message}")
