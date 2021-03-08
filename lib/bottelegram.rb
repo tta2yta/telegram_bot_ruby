@@ -11,11 +11,13 @@ class BotTelegram
       bot.listen do |message|
         index = rand(0..3)
         index -= 1 if index == 3
+        item_con.gen_qoutes
+        qoute=item_con.insp_quote
         case message.text
         when '/start'
           bot.api.send_message(chat_id: message.chat.id, text: "Hello, #{item_con.insp_quote[index]}")
-        when 'quote'
-          bot.api.send_message(chat_id: message.chat.id, text: "Joke, #{item_con.jokes[index]}")
+        when '/quote'
+          bot.api.send_message(chat_id: message.chat.id, text: "Today's Qoute for you \n #{qoute[0]['q']}")
         when '/stop'
           bot.api.send_message(chat_id: message.chat.id, text: "Bye, #{message}")
         end

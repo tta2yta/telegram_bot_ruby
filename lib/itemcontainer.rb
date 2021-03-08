@@ -3,10 +3,7 @@ class ItemContainer
   attr_reader :jokes
 
   def initialize
-    @insp_quote = ['All our dreams can come true, if we have the courage to pursue them.',
-                   'The secret of getting ahead is getting started.',
-                   'It’s hard to beat a person who never gives up.']
-
+    @insp_quote=[]
     @jokes = ['Where do you find a cow with no legs? Right where you left it',
               "Why aren't koalas actual bears? They don't meet the koalafications.",
               "What's E.T. short for? Because he's only got little legs."]
@@ -14,7 +11,9 @@ class ItemContainer
 
   def gen_qoutes
     uri = URI('https://zenquotes.io/api/random')
-    res=JSON.parse(Net::HTTP.get(uri))
-    res
+    @insp_quote=JSON.parse(Net::HTTP.get(uri))
+    if @insp_quote.empty?
+        @insp_quote=[ {"q":"The power of man has grown in every sphere, except over himself.","a":"Winston Churchill",
+        "h":"<blockquote>&ldquo;The power of man has grown in every sphere, except over himself.&rdquo; &mdash; <footer>Winston Churchill</footer></blockquote>"} ]
   end
 end
