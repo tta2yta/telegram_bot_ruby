@@ -17,9 +17,15 @@ describe ItemContainer do
   end
 
   describe '#gen_jokes' do
-  it 'Generatting random Quotes' do
-    usr.user_name('Ted')
-    expect(itm_con.gen_jokes.class).to eql(Hash)
+    it 'Generatting random jokes' do
+      usr.user_name('Ted')
+      expect(itm_con.gen_jokes.class).to eql(Hash)
+    end
   end
-end
+
+  describe '#eru_exchange' do
+    it 'Generatting Exchange Rates for EUR to other Currencies' do
+      expect(itm_con.eru_exchange.class).to eql(Hash)
+    end
+  end
 end
