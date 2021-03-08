@@ -41,10 +41,13 @@
 - Of course, you can alter the messages and commands in ramsey_bot.rb to something you prefer.
 
 
-## How to Run Tests
+## 🔨 Testing
 
-- If you ran `bundle install`, RSpec should be installed, along with all the other dependencies. To run the tests, cd into the top-level project folder and enter the command `rspec`. This will run all tests. It should be noted that the #make_request method is a private method, so its test will naturally fail. To make it pass, temporarily comment out the `private` keyword in the motivational_quotes.rb file. The tests should now pass. Once satisfied, uncomment it so that the #make_request method is private again.
-
+To run the tests described for each method:
+- change directory to the root of the project (cd into the project folder)
+- from terminal run the command `rspec`
+- to run a specific test `rspec ./spec/telegram_bot_spec.rb:10` (here 10 is the line number of the method)
+- result should be similar to:
 ## More Information
 
 An explainer video for this project can be found on [Youtube](https://youtu.be/6JMy82_KKNQ)
